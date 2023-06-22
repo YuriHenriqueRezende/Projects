@@ -52,3 +52,5 @@ And many others! I have 4 years of experience in systems analysis and developmen
 </p>
 
 <img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/fundo.jpg" alt="fundo">
+
+![Snake animation](https://github.com/YuriHenriqueRezende/YuriHenriqueRezende/blob/output/github-contribution-grid-snake.svg)
