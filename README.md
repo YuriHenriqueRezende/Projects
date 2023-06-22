@@ -51,4 +51,6 @@ And many others! I have 4 years of experience in systems analysis and developmen
     <i>yuri.henrique.rezende@outlook.com.br</i>
 </p>
 
+<img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/fundo.jpg" alt="fundo">
+
 
