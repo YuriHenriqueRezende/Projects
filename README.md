@@ -39,3 +39,8 @@ And many others! I have 4 years of experience in systems analysis and developmen
 <p align="center">
   <i>Contact me</i>
 </p>
+
+<p align="center">
+  <img width="24" src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/discord.svg" alt="discord">
+  <br>  
+    <i>yuri_rezende</i>
