@@ -1,5 +1,7 @@
 <img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/logo.jpg" alt="header">
 
+  ---
+
 ### About me
 
 - 💻 Future Full-Stack Web Developer
