@@ -20,5 +20,5 @@
 
 ### Knowledge
 <p align="left">
-  
+  <img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/python.svg" alt="python" width="24" height="24"/>
 </p>
