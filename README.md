@@ -29,12 +29,13 @@
   <img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/Windows 11.svg" alt="Windows 11" width="24" height="24"/>
   <img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/Git-Icon-1788C.svg" alt="Git-Icon-1788C" width="24" height="24"/>
   <img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/mongodb-icon.svg" alt="mongodb-icon" width="24" height="24"/>
+  <img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/icons8-azure.svg" alt="icons8-azure" width="24" height="24"/>
+</p>
 
+And many others! I have 4 years of experience in systems analysis and development, currently hireable.
 
-  
+---
 
-
-
-
-
+<p align="center">
+  <i>Contact me</i>
 </p>
