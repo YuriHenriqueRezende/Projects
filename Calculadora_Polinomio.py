@@ -1,4 +1,4 @@
-
+# A calculator of the second degree, which when entering the values ​​of A B C, will display the results of delta, x and be able to plot a graph #
 ## importando a biblioteca ##
 from tkinter import *
 from matplotlib.figure import Figure
