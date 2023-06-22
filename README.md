@@ -8,6 +8,6 @@
 - ⚙ Python/Mysql Developer
 - 💬 Currently available, projects and meeting committee I am at your disposal
 
-  ---
+ ---
 
 ### Recent Projects
