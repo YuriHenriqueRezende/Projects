@@ -44,3 +44,13 @@ And many others! I have 4 years of experience in systems analysis and developmen
   <img width="24" src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/discord.svg" alt="discord">
   <br>  
     <i>yuri_rezende</i>
+<br><br>
+<br><br>
+    <a href="mailto:yuri.henrique.rezende@outlook.com.br" alt="Email"><img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/email.png" alt="email"></a>
+    <br>  
+
+
+    <i>yuri.henrique.rezende@outlook.com.br</i>
+</p>
+
+<img src="https://github.com/YuriHenriqueRezende/Projects/blob/main/other/fundo.jpg" alt="fundo">
