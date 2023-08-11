@@ -2,12 +2,15 @@
 from tkinter import *
 from tkinter import ttk
 import serial
+import matplotlib.pyplot as plt
+import numpy as np
 
 ## Variaveis ##
 layout = Tk()
 
-## MAIN ##
+
 class sistema():
+    # def principal
     def __init__(self):
         self.janela = layout
         self.estrutura()
@@ -15,12 +18,12 @@ class sistema():
 
         layout.mainloop()
 
+    # interface feita no tkinter
     def estrutura(self):
         self.janela.title("Sistema")
         self.janela.geometry('650x700')
         self.janela.resizable(False, False)
         self.janela.configure()
-
     def dados(self):
         self.colunas1 = Label(self.janela,background='gray')
         self.colunas1.place(relx=0, rely=0.35, relwidth=1, relheight=0.005)
@@ -31,7 +34,7 @@ class sistema():
         self.colunas3 = Label(self.janela, background='gray')
         self.colunas3.place(relx=0, rely=0.10, relwidth=1, relheight=0.005)
 
-        self.texto1 = Label(self.janela, text='SISTEMA DE CALCULO',font=('Verdana', '8', 'bold') )
+        self.texto1 = Label(self.janela, text='SISTEMA DE TEMPERATURA',font=('Verdana', '8', 'bold') )
         self.texto1.pack()
 
         self.texto2 = Label(self.janela, text='SELECIONE O SISTEMA OPERACIONAL', font=('Verdana', '8', 'bold'))
@@ -70,7 +73,7 @@ class sistema():
         self.botao3.place(relx=0.11, rely=0.26, relwidth=0.25, relheight=0.05)
 
         self.botao4 = Button(text='testar programação',font=("verdana", 10, "bold"),command=self.programacao)
-        self.botao4.place(relx=0.39, rely=0.50, relwidth=0.30, relheight=0.05)
+        self.botao4.place(relx=0.35, rely=0.37, relwidth=0.30, relheight=0.05)
 
         self.sistem = IntVar()
         self.botaoE = Radiobutton(text="Windows", variable=self.sistem, value=1).place(x=60, y=140)
@@ -79,7 +82,6 @@ class sistema():
         self.resultado = StringVar()
         self.resultado_final = Label(self.janela,textvariable=self.resultado)
         self.resultado_final.place(relx=0.1, rely=0.7, relwidth=0.8, relheight=0.2)
-
     def conectar(self):
         serialPort = self.caixa1.get()
         velocidade = self.caixa2.get()
@@ -100,7 +102,6 @@ class sistema():
         except:
                 self.texto9 = Label(self.janela, text='FALHA                         ', font=('Verdana', '7'), foreground="red")
                 self.texto9.place(relx=0.64, rely=0.32)
-
     def desconectar(self):
         try:
             self.serial_objeto.close()
@@ -109,17 +110,44 @@ class sistema():
         except:
             self.texto9 = Label(self.janela, text='DESCONECTADO          ', font=('Verdana', '7'), foreground="red")
             self.texto9.place(relx=0.64, rely=0.32)
-
     def fechar(self):
-        self.janela.quit()
+        self.janela.destroy()
+        self.serial_objeto.close()
 
+    #loop para plotar o grafico e coletar as temperatuas
     def programacao(self):
+        plt.ion()
+        data_points = []
         try:
-            linha = str(self.serial_objeto.readline())
-            return self.resultado.set(linha[2:-5])
+            while True:
+                self.serial_objeto.flushInput()  # Limpa o buffer da porta serial
+                data = self.read_sensor(self.serial_objeto)
+                if data is not None:
+                    data_points.append(data)
+                    self.plot_graph(data_points)
         except:
-            self.texto9 = Label(self.janela, text='FALHA                  ', font=('Verdana', '7'), foreground="red")
-            self.texto9.place(relx=0.64, rely=0.32)
+            print("PYTHON SUPERIOR A TODOS")
 
 
+        finally:
+            self.serial_objeto.close()
+
+        plt.ioff()  # Desativa o modo interativo após a leitura ser concluída
+        plt.show()  # Exibe o gráfico final após o término da leitura
+    def plot_graph(self,data_points):
+        plt.plot(data_points, 'bo-')
+        plt.xlabel('Amostras')
+        plt.ylabel('Temperaturas')
+        plt.title('Coleta de temperatura')
+        plt.grid(True)
+        plt.pause(0.01)  # Pausa para permitir a atualização da interface gráfica
+    def read_sensor(self, data):
+        data = self.serial_objeto.readline()
+        print(data)
+        if data:
+            return float(data)
+        else:
+            return None
+
+## MAIN ##
 sistema()
